@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>RIA Skin Care | Natural Beauty Solutions</title>
+		<!-- Fonts for Mainly navbar -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="/styles/index.css" />
+	</head>
+	<body>
+		<!-- Navbar content -->
+		<div class="background"></div>
+		<nav class="navbar">
+			<a href="#">
+				<img
+					class="navbar-logo"
+					src="/assets/logo-black-background.jpg"
+					alt="RIA Skin Care Logo"
+				/>
+			</a>
+			<h3 class="accent-text">RIA Skin Care</h3>
+			<a href="#" class="cart-icon">
+				<svg
+					id="icon"
+					data-name="Layer 1"
+					xmlns="http://www.w3.org/2000/svg"
+					height="25px"
+					viewBox="0 0 106.53 122.88"
+				>
+					<title>shopping-bag</title>
+					<path
+						d="M4.93,30.34H27.41V25.76a25.77,25.77,0,0,1,51.53,0v4.58H101.6a4.91,4.91,0,0,1,3.47,1.45h0a4.9,4.9,0,0,1,1.44,3.48v69.9a17.75,17.75,0,0,1-17.7,17.7H17.7A17.75,17.75,0,0,1,0,105.18V35.28A4.91,4.91,0,0,1,1.45,31.8h0a4.91,4.91,0,0,1,3.47-1.45Zm28.76,0h39V25.76a19.49,19.49,0,0,0-39,0v4.58Zm-6.28,13V36.62H6.28v62h94V36.62H78.94v6.76a6.48,6.48,0,1,1-6.28-.12V36.62h-39v6.71a6.48,6.48,0,1,1-6.28,0Z"
+					/>
+				</svg>
+			</a>
+		</nav>
+
+		<button id="hamburger-btn" class="navbar-burger"></button>
+		<nav class="menu">
+			<a href="#" style="margin-bottom: 50px"><h1>RIA SKIN CARE</h1></a>
+			<a href="#" style="animation-delay: 0.1s">Shop</a>
+			<a href="#products" style="animation-delay: 0.4s">Products</a>
+			<a href="#" style="animation-delay: 0.2s">About</a>
+			<a href="#" style="animation-delay: 0.5s">Contact</a>
+		</nav>
+		<!-- /Navbar Ends-->
+
+		<main>
+			<!-- Hero content -->
+			<section id="hero">
+				<div class="carousel">
+					<div class="carousel-item active">
+						<picture>
+							<source
+								media="(min-width: 768px)"
+								srcset="/background/desktop-skin.jpg"
+							/>
+							<img src="/background/mobile-skin.jpg" alt="Skin Model" />
+						</picture>
+						<div class="carousel-content">
+							<h1>Say Hello to Glow</h1>
+							<p>Because gorgeous, glowing skin is for everyone.</p>
+							<div class="button-group">
+								<button class="btn btn-primary"><span>Shop Now</span></button>
+								<button
+									class="btn btn-secondary"
+									onclick="location.href='#products'"
+								>
+									<span style="position: relative; z-index: 1"
+										>Explore More</span
+									>
+								</button>
+							</div>
+						</div>
+					</div>
+
+					<div class="carousel-item">
+						<picture>
+							<source
+								media="(min-width: 768px)"
+								srcset="/background/desktop-soaps.jpeg"
+							/>
+							<img src="/background/mobile-soaps.jpeg" alt="RIA Soaps" />
+						</picture>
+						<div class="carousel-content">
+							<h1>Radiant Skin Awaits</h1>
+							<p>Unlock Your Natural Glow</p>
+							<div class="button-group">
+								<button class="btn btn-primary"><span>Shop Now</span></button>
+								<button
+									class="btn btn-secondary"
+									onclick="location.href='#products'"
+								>
+									<span style="position: relative; z-index: 1"
+										>Explore More</span
+									>
+								</button>
+							</div>
+						</div>
+					</div>
+
+					<div class="carousel-item">
+						<picture>
+							<source
+								media="(min-width: 768px)"
+								srcset="/background/desktop-ingr.jpg"
+							/>
+							<img
+								src="/background/mobile-ingr.jpeg"
+								alt="RIA natural ingredients image"
+							/>
+						</picture>
+						<div class="carousel-content">
+							<h1>Beauty, Naturally</h1>
+							<p>Skincare Powered by Nature</p>
+							<div class="button-group">
+								<button class="btn btn-primary"><span>Shop Now</span></button>
+								<button
+									class="btn btn-secondary"
+									onclick="location.href='#products'"
+								>
+									<span style="position: relative; z-index: 1"
+										>Explore More</span
+									>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- /Hero ends -->
+
+			<!-- Choose us content -->
+			<section id="why-choose-us">
+				<div class="container">
+					<h2 class="section-title">Why Choose RIA Skin Care</h2>
+					<div class="reasons-grid">
+						<div class="reason-item">
+							<span class="material-symbols-outlined">eco</span>
+							<h3>Organic Ingredients</h3>
+							<p>
+								We use only the finest natural ingredients, sourced responsibly
+								for your skin's health.
+							</p>
+						</div>
+
+						<div class="reason-item">
+							<span class="material-symbols-outlined">science</span>
+							<h3>Quality Commitment</h3>
+							<p>
+								From our rigorous testing processes to our ethical sourcing
+								practices, we are committed to delivering products that you can
+								trust.
+							</p>
+						</div>
+
+						<div class="reason-item">
+							<span class="material-symbols-outlined">favorite</span>
+							<h3>Customer-Centric</h3>
+							<p>
+								Your satisfaction is our top priority. We provide personalized
+								customer service and are always here to assist with your
+								skincare journey.
+							</p>
+						</div>
+
+						<div class="reason-item">
+							<span class="material-symbols-outlined">psychiatry</span>
+							<h3>Personalized Care</h3>
+							<p>
+								Our range caters to diverse skin types, offering tailored
+								solutions for your unique needs.
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- /Choose us ends -->
+
+			<!-- Products content -->
+			<section id="products">
+				<div class="container">
+					<h2 class="section-title">Our Products</h2>
+					<p id="products-intro">
+						Discover our diverse range of skincare solutions designed to cater
+						to all your needs. <br />
+						From rejuvenating soaps to advanced skin treatments, our products
+						are crafted with the highest quality ingredients to ensure your skin
+						receives the best care. Explore our categories to find the perfect
+						products tailored to your skincare routine.
+					</p>
+					<div class="product-grid">
+						<div class="card">
+							<img
+								src="/products/soap-assorted2.jpeg"
+								alt="Face Care"
+								class="card__image"
+							/>
+							<div class="card__content">
+								<p class="card__title">Soaps</p>
+								<p class="card__description">
+									Nourish your skin with our soaps, renowned for their healing
+									properties. Available in Lavender, Turmeric & Honey, Goat
+									Milk, and more delightful varieties.
+								</p>
+								<button class="card__button">Shop Now</button>
+							</div>
+						</div>
+
+						<div class="card">
+							<img
+								src="/products/serum.jpeg"
+								alt="Body Care"
+								class="card__image"
+							/>
+							<div class="card__content">
+								<p class="card__title">Skin Enhancers</p>
+								<p class="card__description">
+									Brighten and enhance complexion with our even tone, anti-aging
+									creams, nourishing cleanser, rejuvenating serum, and soothing
+									rose water.
+								</p>
+								<button class="card__button">Shop Now</button>
+							</div>
+						</div>
+
+						<div class="card">
+							<img
+								src="/products/cream-even-tone1.jpeg"
+								alt="Hair Care"
+								class="card__image"
+							/>
+							<div class="card__content">
+								<p class="card__title">Treatments</p>
+								<p class="card__description">
+									Discover treatments for eczema, cracked heels, solutions for
+									dry skin knees and elbows.
+								</p>
+								<button class="card__button">Shop Now</button>
+							</div>
+						</div>
+
+						<div class="card">
+							<img
+								src="/products/treatment1.jpeg"
+								alt="Aromatherapy"
+								class="card__image"
+							/>
+							<div class="card__content">
+								<p class="card__title">Anti-Acne</p>
+								<p class="card__description">
+									Get rid and maintain beautiful skin with our acne cream,
+									sulfur cream, clarifying lotion, anti-acne serum.
+								</p>
+								<button class="card__button">Shop Now</button>
+							</div>
+						</div>
+
+						<div class="view-all">
+							<button class="view-all-button">View All Products</button>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- /Product content ends -->
+
+			<!-- Social proof content -->
+			<section id="social-proof">
+				<div class="container">
+					<h2 class="section-title">What Our Customers Say</h2>
+					<div class="testimonial-container">
+						<div class="testimonial-scroll">
+							<!-- Unique Testimonial Cards -->
+							<div class="testimonial-card">
+								<img
+									src="/assets/customer-1.jpeg"
+									alt="M. Mukwevho."
+									class="testimonial-image"
+								/>
+								<h3>M. Mukwevho</h3>
+								<p class="testimonial-text">
+									"Ndiḓivha hu vho ṱhoḓa vhuḓi u amba nga ṅwana wa ṱhuṱhuwedzi
+									na mashudu a RIA. Vhuhadzi na vhuḓi ha nyedza u ṱhudza."
+								</p>
+								<div class="rating">★★★★★</div>
+							</div>
+
+							<div class="testimonial-card">
+								<img
+									src="/assets/customer-2.jpeg"
+									alt="S. Mokoeana"
+									class="testimonial-image"
+								/>
+								<h3>S. Mokoeana</h3>
+								<p class="testimonial-text">
+									"I've tried many skincare brands, but RIA stands out. My skin
+									feels healthier than ever!"
+								</p>
+								<div class="rating">★★★★</div>
+							</div>
+
+							<div class="testimonial-card">
+								<img
+									src="/assets/customer-3.jpeg"
+									alt="R. Khoza"
+									class="testimonial-image"
+								/>
+								<h3>R. Khoza</h3>
+								<p class="testimonial-text">
+									"The personalized care and attention to detail make RIA Skin
+									Care my go-to for all my skincare needs."
+								</p>
+								<div class="rating">★★★★★</div>
+							</div>
+
+							<div class="testimonial-card">
+								<img
+									src="/assets/customer-4.jpeg"
+									alt="A. Buthelezi"
+									class="testimonial-image"
+								/>
+								<h3>A. Buthelezi</h3>
+								<p class="testimonial-text">
+									"As someone with sensitive skin, I'm amazed at how gentle yet
+									effective RIA products are. Highly recommended!"
+								</p>
+								<div class="rating">★★★★★</div>
+							</div>
+
+							<div class="testimonial-card">
+								<img
+									src="/assets/customer-5.jpeg"
+									alt="T. Mthembu"
+									class="testimonial-image"
+								/>
+								<h3>T. Mthembu</h3>
+								<p class="testimonial-text">
+									"The results I've seen with RIA Skin Care are incredible. My
+									skin has never looked better!"
+								</p>
+								<div class="rating">★★★★★</div>
+							</div>
+
+							<div class="testimonial-card">
+								<img
+									src="/assets/customer-6.jpeg"
+									alt="M. Alex"
+									class="testimonial-image"
+								/>
+								<h3>M. Alex</h3>
+								<p class="testimonial-text">
+									"RIA's commitment to natural ingredients and quality really
+									shows in their products. I'm a customer for life!"
+								</p>
+								<div class="rating">★★★★</div>
+							</div>
+
+							<div class="testimonial-card">
+								<img
+									src="/assets/customer-1.jpeg"
+									alt="M. Mukwevho."
+									class="testimonial-image"
+								/>
+								<h3>M. Mukwevho</h3>
+								<p class="testimonial-text">
+									"Ndiḓivha hu vho ṱhoḓa vhuḓi u amba nga ṅwana wa ṱhuṱhuwedzi
+									na mashudu a RIA. Vhuhadzi na vhuḓi ha nyedza u ṱhudza."
+								</p>
+								<div class="rating">★★★★★</div>
+							</div>
+
+							<div class="testimonial-card">
+								<img
+									src="/assets/customer-2.jpeg"
+									alt="S. Mokoeana"
+									class="testimonial-image"
+								/>
+								<h3>S. Mokoeana</h3>
+								<p class="testimonial-text">
+									"I've tried many skincare brands, but RIA stands out. My skin
+									feels healthier than ever!"
+								</p>
+								<div class="rating">★★★★★</div>
+							</div>
+
+							<div class="testimonial-card">
+								<img
+									src="/assets/customer-3.jpeg"
+									alt="R. Khoza"
+									class="testimonial-image"
+								/>
+								<h3>R. Khoza</h3>
+								<p class="testimonial-text">
+									"The personalized care and attention to detail make RIA Skin
+									Care my go-to for all my skincare needs."
+								</p>
+								<div class="rating">★★★★★</div>
+							</div>
+
+							<div class="testimonial-card">
+								<img
+									src="/assets/customer-4.jpeg"
+									alt="A. Buthelezi"
+									class="testimonial-image"
+								/>
+								<h3>A. Buthelezi</h3>
+								<p class="testimonial-text">
+									"As someone with sensitive skin, I'm amazed at how gentle yet
+									effective RIA products are. Highly recommended!"
+								</p>
+								<div class="rating">★★★★★</div>
+							</div>
+
+							<div class="testimonial-card">
+								<img
+									src="/assets/customer-5.jpeg"
+									alt="T. Mthembu"
+									class="testimonial-image"
+								/>
+								<h3>T. Mthembu</h3>
+								<p class="testimonial-text">
+									"The results I've seen with RIA Skin Care are incredible. My
+									skin has never looked better!"
+								</p>
+								<div class="rating">★★★★★</div>
+							</div>
+
+							<div class="testimonial-card">
+								<img
+									src="/assets/customer-6.jpeg"
+									alt="M. Alex"
+									class="testimonial-image"
+								/>
+								<h3>M. Alex</h3>
+								<p class="testimonial-text">
+									"RIA's commitment to natural ingredients and quality really
+									shows in their products. I'm a customer for life!"
+								</p>
+								<div class="rating">★★★★★</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- /Social proof ends -->
+
+			<!-- Call to action content -->
+			<section id="cta">
+				<div class="parallax-container">
+					<div class="parallax-content">
+						<h2>Discover Your Natural Glow</h2>
+						<p>
+							Experience the power of nature with our organic skincare products.
+						</p>
+						<button class="cta-button">Shop Now</button>
+					</div>
+				</div>
+
+				<div class="cta-features">
+					<div class="feature">
+						<span class="material-symbols-outlined">eco</span>
+						<h3>100% Natural</h3>
+						<p>Made with organic ingredients</p>
+					</div>
+
+					<div class="feature">
+						<span class="material-symbols-outlined">cruelty_free</span>
+						<h3>Cruelty-Free</h3>
+						<p>Never tested on animals & no harmful Testing</p>
+					</div>
+
+					<div class="feature">
+						<span class="material-symbols-outlined">verified</span>
+						<h3>Customer Approved</h3>
+						<p>Safe for all skin types and widely Recommended</p>
+					</div>
+				</div>
+			</section>
+			<!-- /Call to action ends -->
+		</main>
+
+		<script src="/scripts/script.js"></script>
+	</body>
+</html>
