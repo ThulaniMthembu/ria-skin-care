@@ -23,6 +23,10 @@ html {
 	--black-color: #000;
 	--yellow-color: #ffd700;
 	--grey-color: #666;
+	--form-input-color: #624761;
+	--twitter-icon-color: #1da1f2;
+	--facebook-icon-color: #1877f2;
+	--instagram-icon-color: #962fbf;
 }
 
 /*** Typography ***/
@@ -869,9 +873,15 @@ main {
 
 #get-in-touch h2 {
 	text-align: center;
-	margin-bottom: 1rem;
 	color: var(--black-color);
 	font-size: 2.5rem;
+}
+
+#get-in-touch h4 {
+	text-align: center;
+	margin-bottom: 2rem;
+	color: var(--black-color);
+	font-size: 1.2rem;
 }
 
 #get-in-touch > p {
@@ -911,46 +921,123 @@ main {
 	color: var(--black-color);
 }
 
-.shop-now {
-	margin-bottom: 1.5rem;
-	padding: 0.75rem 1.5rem;
-	font-size: 1.1rem;
-	align-self: flex-start;
+/* Common styles for social buttons */
+.btn {
+	background: transparent;
+	position: relative;
+	padding: 5px 15px;
+	display: flex;
+	align-items: center;
+	font-size: 1.063rem;
+	font-weight: 600;
+	text-decoration: none;
+	cursor: pointer;
+	border-radius: 25px;
+	outline: none;
+	overflow: hidden;
+	transition: color 0.3s 0.1s ease-out;
+	text-align: center;
 }
 
+.btn span {
+	margin: 10px;
+}
+
+.btn::before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	content: '';
+	border-radius: 50%;
+	display: block;
+	width: 20em;
+	height: 20em;
+	left: -5em;
+	text-align: center;
+	transition: box-shadow 0.5s ease-out;
+	z-index: -1;
+}
+
+/* Social media button styles */
 .social-icons {
 	display: flex;
 	gap: 1rem;
 }
 
 .social-icons a {
-	color: var(--button-bg);
-	font-size: 1.5rem;
+	font-size: 1.2rem;
 	transition: color 0.3s ease;
 }
 
-.social-icons a:hover {
-	color: var(--accent2);
+.social-btn {
+	width: 40px;
+	height: 40px;
+	padding: 0;
+	justify-content: center;
+	background-color: var(--black-color);
+}
+
+.social-btn svg {
+	width: 25px;
+	height: 25px;
+	transition: fill 0.3s ease;
+}
+
+.instagram-btn {
+	border-color: var(--white-color);
+	color: var(--white-color);
+}
+
+.instagram-btn svg {
+	fill: var(--white-color);
+}
+
+.facebook-btn {
+	border-color: var(--black-color);
+	color: var(--black-color);
+}
+
+.facebook-btn svg {
+	fill: var(--white-color);
+}
+
+.twitter-btn {
+	border-color: var(--white-color);
+	color: var(--white-color);
+}
+
+.twitter-btn svg {
+	fill: var(--white-color);
 }
 
 .contact-form {
 	flex: 1;
 	display: flex;
 	flex-direction: column;
-	background-color: white;
+	background-color: var(--form-input-color);
 	padding: 2rem;
 	border-radius: 10px;
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form input::placeholder,
+textarea::placeholder {
+	color: var(--grey-color);
 }
 
 .contact-form input,
 .contact-form textarea {
 	margin-bottom: 1.5rem;
 	padding: 0.75rem;
-	border: 1px solid #e0e0e0;
+	border: 1px solid transparent;
 	border-radius: 5px;
 	font-size: 1rem;
 	transition: border-color 0.3s ease;
+	background: var(--accent1);
+	color: var(--black-color);
 }
 
 .contact-form input:focus,
@@ -972,6 +1059,7 @@ main {
 	border-radius: 5px;
 	cursor: pointer;
 	transition: background-color 0.3s ease, transform 0.2s ease;
+	background-color: var(--button-bg);
 }
 
 .contact-form .btn:hover {
@@ -999,8 +1087,8 @@ main {
 
 /*** Footer styles ***/
 #site-footer {
-	background-color: #f8f9fa;
-	color: #333;
+	background-color: var(--accent2);
+	color: var(--black-color);
 	padding: 3rem 0 1rem;
 	width: 100%;
 	display: block;
@@ -1038,7 +1126,7 @@ main {
 .footer-logo h3 {
 	margin-top: 0.5rem;
 	font-size: 1.5rem;
-	color: #8c4196;
+	color: var(--button-bg);
 }
 
 .footer-links {
@@ -1056,7 +1144,7 @@ main {
 .footer-column h4 {
 	font-size: 1.1rem;
 	margin-bottom: 1rem;
-	color: #8c4196;
+	color: var(--button-bg);
 }
 
 .footer-column ul {
@@ -1070,13 +1158,13 @@ main {
 }
 
 .footer-column ul li a {
-	color: #666;
+	color: var(--black-color);
 	text-decoration: none;
 	transition: color 0.3s ease;
 }
 
 .footer-column ul li a:hover {
-	color: #8c4196;
+	color: var(--button-bg);
 }
 
 .footer-bottom {
@@ -1084,28 +1172,13 @@ main {
 	justify-content: space-between;
 	align-items: center;
 	padding-top: 1rem;
-	border-top: 1px solid #e0e0e0;
+	border-top: 2px solid var(--black-color);
 }
 
 .footer-bottom p {
 	margin: 0;
 	font-size: 0.9rem;
-	color: #666;
-}
-
-.social-icons {
-	display: flex;
-	gap: 1rem;
-}
-
-.social-icons a {
-	color: #666;
-	font-size: 1.2rem;
-	transition: color 0.3s ease;
-}
-
-.social-icons a:hover {
-	color: #8c4196;
+	color: var(--black-color);
 }
 
 @media (max-width: 768px) {
@@ -1125,11 +1198,12 @@ main {
 
 	.footer-bottom {
 		flex-direction: column;
+		gap: 10px;
 		text-align: center;
 	}
 
 	.social-icons {
-		margin-top: 1rem;
+		margin-top: 0.313rem;
 		justify-content: center;
 	}
 }
