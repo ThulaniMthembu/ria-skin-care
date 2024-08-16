@@ -894,7 +894,8 @@ main {
 .contact-content {
 	display: flex;
 	justify-content: space-between;
-	gap: 4rem;
+	gap: 3rem;
+	padding: 0 6.25rem;
 }
 
 .contact-info {
@@ -1069,6 +1070,7 @@ textarea::placeholder {
 @media (max-width: 768px) {
 	.contact-content {
 		flex-direction: column;
+		padding: 0;
 	}
 
 	.contact-info {
@@ -1093,7 +1095,7 @@ textarea::placeholder {
 	width: 100%;
 	display: block;
 	position: relative;
-	z-index: 10;
+	z-index: 1;
 	flex-shrink: 0;
 	font-family: 'Lato', sans-serif;
 }
@@ -1158,13 +1160,13 @@ textarea::placeholder {
 }
 
 .footer-column ul li a {
-	color: var(--black-color);
+	color: var(--form-input-color);
 	text-decoration: none;
 	transition: color 0.3s ease;
 }
 
 .footer-column ul li a:hover {
-	color: var(--button-bg);
+	color: var(--twitter-icon-color);
 }
 
 .footer-bottom {
@@ -1182,6 +1184,10 @@ textarea::placeholder {
 }
 
 @media (max-width: 768px) {
+	.footer-container {
+		padding: 1.875rem 1.875rem 0.313rem 1.875rem;
+	}
+
 	.footer-top {
 		flex-direction: column;
 	}
@@ -1192,7 +1198,7 @@ textarea::placeholder {
 
 	.footer-column {
 		flex: 0 0 100%;
-		text-align: center;
+		text-align: start;
 		margin-bottom: 1.5rem;
 	}
 
