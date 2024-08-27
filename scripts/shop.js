@@ -33,7 +33,6 @@ function toggleCart() {
 	isCartShowing = !isCartShowing;
 	cartContainer.classList.toggle('show', isCartShowing);
 
-	// Toggle the class to disable or enable scrolling
 	if (isCartShowing) {
 		document.body.classList.add('body-no-scroll');
 	} else {
@@ -193,7 +192,7 @@ class ShoppingCart {
 		const itemPrice = size ? product.price[size] : product.price;
 
 		if (!size && typeof product.price === 'object') {
-			alert('Please select a size before adding to cart.');
+			showPopover('Please select a size before adding to cart.');
 			return;
 		}
 
@@ -234,17 +233,18 @@ class ShoppingCart {
 		}
 	}
 
-	clearCart() {
+	clearCart(skipConfirmation = false) {
 		if (!this.items.length) {
-			alert('Your shopping cart is already empty');
+			showPopover('Your shopping cart is already empty');
 			return;
 		}
 
-		const isCartCleared = confirm(
-			'Are you sure you want to clear all items from your shopping cart?'
-		);
-
-		if (isCartCleared) {
+		if (
+			skipConfirmation ||
+			confirm(
+				'Are you sure you want to clear all items from your shopping cart?'
+			)
+		) {
 			this.items = [];
 			this.updateLocalStorage();
 			this.updateCartDisplay();
@@ -396,7 +396,7 @@ displayProducts(products);
 
 function handleCheckout() {
 	if (cart.items.length === 0) {
-		alert('Your cart is empty. Add some items before checking out.');
+		showPopover('Your cart is empty. Add some items before checking out.');
 	} else {
 		// Populate order details
 		const orderDetails = cart.items
@@ -444,15 +444,16 @@ checkoutForm.onsubmit = function (event) {
 			function (response) {
 				console.log('Email sent successfully:', response);
 				console.log('Recipient email:', templateParams.email);
-				alert(
+				showPopover(
 					"Thank you for your purchase! You will receive an email confirmation shortly. If you don't see it, please check your spam folder."
 				);
-				cart.clearCart();
+				cart.clearCart(true); // Clear cart without confirmation
 				modal.style.display = 'none';
+				toggleCart(); // Close the cart
 			},
 			function (error) {
 				console.error('Email sending failed:', error);
-				alert(
+				showPopover(
 					'There was an error processing your order. Please try again. Error: ' +
 						JSON.stringify(error)
 				);
@@ -465,15 +466,15 @@ function validateForm() {
 	const inputs = checkoutForm.getElementsByTagName('input');
 	for (let input of inputs) {
 		if (input.hasAttribute('required') && input.value.trim() === '') {
-			alert(`Please fill out the ${input.placeholder} field.`);
+			showPopover(`Please fill out the ${input.placeholder} field.`);
 			return false;
 		}
 		if (input.name === 'email' && !validateEmail(input.value)) {
-			alert('Please enter a valid email address.');
+			showPopover('Please enter a valid email address.');
 			return false;
 		}
 		if (input.name === 'phone' && !validatePhone(input.value)) {
-			alert('Please enter a valid phone number.');
+			showPopover('Please enter a valid phone number.');
 			return false;
 		}
 	}
@@ -496,3 +497,14 @@ checkoutBtns.forEach((button) => {
 		handleCheckout();
 	});
 });
+
+function showPopover(message) {
+	const popover = document.createElement('div');
+	popover.className = 'popover';
+	popover.textContent = message;
+	document.body.appendChild(popover);
+
+	setTimeout(() => {
+		popover.remove();
+	}, 3000);
+}
