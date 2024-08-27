@@ -40,7 +40,7 @@ h3 {
 
 .product-info {
 	font-family: 'Caveat', cursive;
-	font-size: 1.25rem !important;
+	font-size: 1.5rem !important;
 }
 
 p {
@@ -148,9 +148,9 @@ main {
 
 #search-sort-filter {
 	display: flex;
-	flex-wrap: wrap; /* Allows wrapping on smaller screens */
+	flex-wrap: wrap;
 	justify-content: space-between;
-	gap: 1rem; /* Provides consistent spacing between items */
+	gap: 1rem;
 	margin-bottom: 1rem;
 }
 
