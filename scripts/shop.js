@@ -210,8 +210,10 @@ class ShoppingCart {
 
 		if (existingItem) {
 			existingItem.quantity += 1;
+			showPopover(`Added another ${product.name} to your cart!`);
 		} else {
 			this.items.push({ ...product, size, price: itemPrice, quantity: 1 });
+			showPopover(`${product.name} added to your cart!`);
 		}
 
 		this.updateLocalStorage();
@@ -510,16 +512,20 @@ checkoutBtns.forEach((button) => {
 	});
 });
 
-function showPopover(message) {
+function showPopover(message, duration = 3000) {
+	const existingPopover = document.querySelector('.popover');
+	if (existingPopover) {
+		existingPopover.remove();
+	}
+
 	const popover = document.createElement('div');
 	popover.className = 'popover';
 	popover.textContent = message;
 	document.body.appendChild(popover);
 
-	// Ensure the popover is on top of the loader
 	popover.style.zIndex = '10000';
 
 	setTimeout(() => {
 		popover.remove();
-	}, 3000);
+	}, duration);
 }

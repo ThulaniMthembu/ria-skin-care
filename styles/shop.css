@@ -439,14 +439,17 @@ main {
 	position: fixed;
 	top: 50%;
 	left: 50%;
-	transform: translateX(-50%);
+	transform: translate(-50%, -50%);
 	background-color: rgba(109, 7, 139, 0.9);
 	color: white;
-	padding: 50px 50px;
+	padding: 20px 30px;
 	border-radius: 5px;
 	font-size: 1.25rem;
 	z-index: 1000;
 	animation: fadeInOut 3s ease-in-out;
+	text-align: center;
+	max-width: 90%;
+	width: 300px;
 }
 
 @keyframes fadeInOut {
@@ -457,6 +460,15 @@ main {
 	10%,
 	90% {
 		opacity: 1;
+	}
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+	.popover {
+		font-size: 1rem;
+		padding: 15px 20px;
+		width: 250px;
 	}
 }
 
