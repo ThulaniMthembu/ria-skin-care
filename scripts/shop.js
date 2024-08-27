@@ -32,6 +32,13 @@ window.addEventListener('scroll', () => {
 function toggleCart() {
 	isCartShowing = !isCartShowing;
 	cartContainer.classList.toggle('show', isCartShowing);
+
+	// Toggle the class to disable or enable scrolling
+	if (isCartShowing) {
+		document.body.classList.add('body-no-scroll');
+	} else {
+		document.body.classList.remove('body-no-scroll');
+	}
 }
 
 const products = [
