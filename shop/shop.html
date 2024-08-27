@@ -52,6 +52,11 @@
 				</select>
 			</div>
 			<div id="dessert-card-container"></div>
+			<div id="main-checkout-container">
+				<button id="main-checkout-btn" class="btn checkout-btn">
+					Proceed to Checkout
+				</button>
+			</div>
 		</main>
 
 		<div id="cart-container" class="hidden">
@@ -64,6 +69,40 @@
 				<p>Subtotal: <span id="subtotal">R0</span></p>
 				<p>Taxes: <span id="taxes">R0</span></p>
 				<p>Total: <span id="total">R0</span></p>
+			</div>
+			<button id="checkout-btn" class="btn checkout-btn">
+				Proceed to Checkout
+			</button>
+		</div>
+
+		<div id="checkout-modal" class="modal">
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<h2>Checkout</h2>
+				<form
+					id="checkout-form"
+					action="https://formspree.io/f/mdknbebp"
+					method="POST"
+				>
+					<input type="text" name="name" placeholder="Full Name" required />
+					<input
+						type="email"
+						name="email"
+						placeholder="Email Address"
+						required
+					/>
+					<input
+						type="text"
+						name="address"
+						placeholder="Shipping Address"
+						required
+					/>
+					<input type="tel" name="phone" placeholder="Phone Number" required />
+					<input type="hidden" name="order_details" id="order-details" />
+					<button type="submit" class="btn checkout-btn">
+						Complete Purchase
+					</button>
+				</form>
 			</div>
 		</div>
 		<script src="/scripts/shop.js"></script>

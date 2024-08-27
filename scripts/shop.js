@@ -12,6 +12,12 @@ const closeCartBtn = document.getElementById('close-cart-btn');
 const searchInput = document.getElementById('search-input');
 const sortSelect = document.getElementById('sort-select');
 const categorySelect = document.getElementById('category-select');
+const modal = document.getElementById('checkout-modal');
+const closeBtn = document.getElementsByClassName('close')[0];
+const checkoutForm = document.getElementById('checkout-form');
+const orderDetailsInput = document.getElementById('order-details');
+const checkoutBtns = document.querySelectorAll('.checkout-btn');
+
 let isCartShowing = false;
 
 function toggleCart() {
@@ -371,3 +377,85 @@ searchInput.addEventListener('keypress', function (e) {
 
 // Initial display of all products
 displayProducts(products);
+
+function handleCheckout() {
+	if (cart.items.length === 0) {
+		alert('Your cart is empty. Add some items before checking out.');
+	} else {
+		// Populate order details
+		const orderDetails = cart.items
+			.map(
+				(item) =>
+					`${item.name} (${item.size || 'N/A'}) - Quantity: ${
+						item.quantity
+					} - Price: R${item.price * item.quantity}`
+			)
+			.join('\n');
+		orderDetailsInput.value = `Order Details:\n${orderDetails}\n\nTotal: R${cart.total.toFixed(
+			2
+		)}`;
+
+		// Show modal
+		modal.style.display = 'block';
+	}
+}
+
+closeBtn.onclick = function () {
+	modal.style.display = 'none';
+};
+
+window.onclick = function (event) {
+	if (event.target == modal) {
+		modal.style.display = 'none';
+	}
+};
+
+checkoutForm.onsubmit = function (event) {
+	event.preventDefault();
+
+	if (validateForm()) {
+		// Form is valid, submit it
+		this.submit();
+		alert(
+			'Thank you for your purchase! You will receive an email confirmation shortly.'
+		);
+		cart.clearCart();
+		modal.style.display = 'none';
+	}
+};
+
+function validateForm() {
+	const inputs = checkoutForm.getElementsByTagName('input');
+	for (let input of inputs) {
+		if (input.hasAttribute('required') && input.value.trim() === '') {
+			alert(`Please fill out the ${input.placeholder} field.`);
+			return false;
+		}
+		if (input.name === 'email' && !validateEmail(input.value)) {
+			alert('Please enter a valid email address.');
+			return false;
+		}
+		if (input.name === 'phone' && !validatePhone(input.value)) {
+			alert('Please enter a valid phone number.');
+			return false;
+		}
+	}
+	return true;
+}
+
+function validateEmail(email) {
+	const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+	return re.test(email);
+}
+
+function validatePhone(phone) {
+	const re = /^\+?[\d\s-]{10,}$/;
+	return re.test(phone);
+}
+
+checkoutBtns.forEach((button) => {
+	button.addEventListener('click', (event) => {
+		console.log(`Button clicked: ${event.target.id}`);
+		handleCheckout();
+	});
+});
