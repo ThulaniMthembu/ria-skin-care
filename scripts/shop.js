@@ -20,6 +20,14 @@ const checkoutBtns = document.querySelectorAll('.checkout-btn');
 
 let isCartShowing = false;
 
+function showLoader() {
+	document.querySelector('.loader-wrapper').style.display = 'flex';
+}
+
+function hideLoader() {
+	document.querySelector('.loader-wrapper').style.display = 'none';
+}
+
 window.addEventListener('scroll', () => {
 	const header = document.querySelector('header');
 	if (window.scrollY > 0) {
@@ -431,6 +439,8 @@ checkoutForm.onsubmit = function (event) {
 
 	if (validateForm()) {
 		// Prepare the email parameters
+		showLoader();
+
 		var templateParams = {
 			name: this.name.value,
 			email: this.email.value,
@@ -444,6 +454,7 @@ checkoutForm.onsubmit = function (event) {
 			function (response) {
 				console.log('Email sent successfully:', response);
 				console.log('Recipient email:', templateParams.email);
+				hideLoader();
 				showPopover(
 					"Thank you for your purchase! You will receive an email confirmation shortly. If you don't see it, please check your spam folder."
 				);
@@ -453,6 +464,7 @@ checkoutForm.onsubmit = function (event) {
 			},
 			function (error) {
 				console.error('Email sending failed:', error);
+				hideLoader();
 				showPopover(
 					'There was an error processing your order. Please try again. Error: ' +
 						JSON.stringify(error)
@@ -503,6 +515,9 @@ function showPopover(message) {
 	popover.className = 'popover';
 	popover.textContent = message;
 	document.body.appendChild(popover);
+
+	// Ensure the popover is on top of the loader
+	popover.style.zIndex = '10000';
 
 	setTimeout(() => {
 		popover.remove();
