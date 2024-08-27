@@ -426,16 +426,20 @@ checkoutForm.onsubmit = function (event) {
 		// Send the email using EmailJS
 		emailjs.send('service_rj59y92', 'template_fsn2ake', templateParams).then(
 			function (response) {
-				console.log('SUCCESS!', response.status, response.text);
+				console.log('Email sent successfully:', response);
+				console.log('Recipient email:', templateParams.email);
 				alert(
-					'Thank you for your purchase! You will receive an email confirmation shortly.'
+					"Thank you for your purchase! You will receive an email confirmation shortly. If you don't see it, please check your spam folder."
 				);
 				cart.clearCart();
 				modal.style.display = 'none';
 			},
 			function (error) {
-				console.log('FAILED...', error);
-				alert('There was an error processing your order. Please try again.');
+				console.error('Email sending failed:', error);
+				alert(
+					'There was an error processing your order. Please try again. Error: ' +
+						JSON.stringify(error)
+				);
 			}
 		);
 	}
@@ -461,8 +465,9 @@ function validateForm() {
 }
 
 function validateEmail(email) {
-	const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-	return re.test(email);
+	const re =
+		/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+	return re.test(email.toLowerCase());
 }
 
 function validatePhone(phone) {
