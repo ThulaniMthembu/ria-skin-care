@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700&family=Lato:wght@300;400;700&family=Caveat&display=swap');
+
 :root {
 	--primary: #ffc8dd;
 	--secondary: #8c4196;
@@ -21,6 +23,23 @@ body {
 	background-color: var(--primary);
 	color: var(--dark);
 	overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+	font-family: 'Abhaya Libre', serif;
+	line-height: 1.2;
+	font-weight: 700;
+}
+
+.product-info {
+	font-family: 'Caveat', cursive;
+	font-size: 1.25rem !important;
+}
+
+p {
+	font-size: 1rem;
 }
 
 header {
@@ -47,6 +66,17 @@ header.scrolled {
 	border-radius: 5px;
 	height: 60px;
 	width: 60px;
+}
+
+.menu > a {
+	margin: 0 10px;
+	color: var(--secondary);
+	font-size: 1rem;
+	text-decoration: none;
+}
+
+.menu > a:hover {
+	color: var(--white);
 }
 
 .title {
