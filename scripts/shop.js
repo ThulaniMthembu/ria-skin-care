@@ -414,34 +414,32 @@ checkoutForm.onsubmit = function (event) {
 	event.preventDefault();
 
 	if (validateForm()) {
-		// Form is valid, submit it
-		this.submit();
-		alert(
-			'Thank you for your purchase! You will receive an email confirmation shortly.'
+		// Prepare the email parameters
+		var templateParams = {
+			name: this.name.value,
+			email: this.email.value,
+			address: this.address.value,
+			phone: this.phone.value,
+			order_details: this.order_details.value,
+		};
+
+		// Send the email using EmailJS
+		emailjs.send('service_rj59y92', 'template_fsn2ake', templateParams).then(
+			function (response) {
+				console.log('SUCCESS!', response.status, response.text);
+				alert(
+					'Thank you for your purchase! You will receive an email confirmation shortly.'
+				);
+				cart.clearCart();
+				modal.style.display = 'none';
+			},
+			function (error) {
+				console.log('FAILED...', error);
+				alert('There was an error processing your order. Please try again.');
+			}
 		);
-		cart.clearCart();
-		modal.style.display = 'none';
 	}
 };
-
-function validateForm() {
-	const inputs = checkoutForm.getElementsByTagName('input');
-	for (let input of inputs) {
-		if (input.hasAttribute('required') && input.value.trim() === '') {
-			alert(`Please fill out the ${input.placeholder} field.`);
-			return false;
-		}
-		if (input.name === 'email' && !validateEmail(input.value)) {
-			alert('Please enter a valid email address.');
-			return false;
-		}
-		if (input.name === 'phone' && !validatePhone(input.value)) {
-			alert('Please enter a valid phone number.');
-			return false;
-		}
-	}
-	return true;
-}
 
 function validateEmail(email) {
 	const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -455,7 +453,6 @@ function validatePhone(phone) {
 
 checkoutBtns.forEach((button) => {
 	button.addEventListener('click', (event) => {
-		console.log(`Button clicked: ${event.target.id}`);
 		handleCheckout();
 	});
 });

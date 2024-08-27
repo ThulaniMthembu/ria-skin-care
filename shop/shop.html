@@ -9,6 +9,15 @@
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
 		/>
+		<script
+			type="text/javascript"
+			src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+		></script>
+		<script type="text/javascript">
+			(function () {
+				emailjs.init('service_rj59y92');
+			})();
+		</script>
 	</head>
 	<body>
 		<header>
@@ -79,11 +88,7 @@
 			<div class="modal-content">
 				<span class="close">&times;</span>
 				<h2>Checkout</h2>
-				<form
-					id="checkout-form"
-					action="https://formspree.io/f/mdknbebp"
-					method="POST"
-				>
+				<form id="checkout-form">
 					<input type="text" name="name" placeholder="Full Name" required />
 					<input
 						type="email"
