@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>RIA SKINCARE Shopping Cart</title>
+		<link rel="stylesheet" href="/styles/shop.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+		/>
+	</head>
+	<body>
+		<header>
+			<h1 class="title">RIA SKINCARE</h1>
+			<nav>
+				<button id="cart-btn" type="button" class="btn">
+					<i class="fas fa-shopping-bag black-icon"></i>
+					<span id="cart-count">0</span>
+				</button>
+			</nav>
+		</header>
+
+		<div id="intro">
+			<h2>Our Premium Skincare Products</h2>
+			<p>
+				Every product is handmade with care. <br />
+				At RIA Skin Care, we craft everything from scratch, including body
+				lotions, creams, and cleansers.
+			</p>
+		</div>
+
+		<main>
+			<div id="search-sort-filter">
+				<input type="text" id="search-input" placeholder="Search products..." />
+				<select id="sort-select">
+					<option value="">Sort by...</option>
+					<option value="price-low-high">Price: Low to High</option>
+					<option value="price-high-low">Price: High to Low</option>
+					<option value="name-a-z">Name: A to Z</option>
+					<option value="name-z-a">Name: Z to A</option>
+				</select>
+				<select id="category-select">
+					<option value="">All Categories</option>
+					<option value="Flawless Complexion">Flawless Complexion</option>
+					<option value="Treatment">Treatment</option>
+					<option value="Anti-Acne">Anti-Acne</option>
+					<option value="Brightening and Lightening">
+						Brightening & Lightening
+					</option>
+					<option value="Handmade Soaps">Soaps</option>
+				</select>
+			</div>
+			<div id="dessert-card-container"></div>
+		</main>
+
+		<div id="cart-container" class="hidden">
+			<button id="close-cart-btn" class="btn">&times;</button>
+			<h2>Your Cart</h2>
+			<button class="btn" id="clear-cart-btn">Clear Cart</button>
+			<div id="products-container"></div>
+			<div id="cart-summary">
+				<p>Total number of items: <span id="total-items">0</span></p>
+				<p>Subtotal: <span id="subtotal">R0</span></p>
+				<p>Taxes: <span id="taxes">R0</span></p>
+				<p>Total: <span id="total">R0</span></p>
+			</div>
+		</div>
+		<script src="/scripts/shop.js"></script>
+	</body>
+</html>
