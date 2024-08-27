@@ -24,12 +24,29 @@ body {
 }
 
 header {
-	background-color: var(--secondary);
-	color: var(--white);
-	padding: 32px 50px;
+	position: fixed;
+	z-index: 10;
+	top: 0;
+	left: 0;
 	display: flex;
-	justify-content: space-between;
 	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	height: 72px;
+	padding: 10px 80px 5px 30px;
+	background: var(--primary);
+	color: #f9f9f9;
+	transition: box-shadow 0.3s ease-in-out;
+}
+
+header.scrolled {
+	box-shadow: 0 4px 8px rgba(213, 162, 255, 0.8);
+}
+
+.navbar-logo {
+	border-radius: 5px;
+	height: 60px;
+	width: 60px;
 }
 
 .title {
@@ -37,7 +54,7 @@ header {
 }
 
 #cart-btn {
-	background: var(--secondary);
+	background: transparent;
 	border: none;
 	color: var(--white);
 	font-size: 1.5rem;
@@ -89,6 +106,7 @@ header {
 }
 
 main {
+	margin-top: 70px;
 	padding: 2rem;
 }
 

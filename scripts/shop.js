@@ -20,6 +20,15 @@ const checkoutBtns = document.querySelectorAll('.checkout-btn');
 
 let isCartShowing = false;
 
+window.addEventListener('scroll', () => {
+	const header = document.querySelector('header');
+	if (window.scrollY > 0) {
+		header.classList.add('scrolled');
+	} else {
+		header.classList.remove('scrolled');
+	}
+});
+
 function toggleCart() {
 	isCartShowing = !isCartShowing;
 	cartContainer.classList.toggle('show', isCartShowing);
