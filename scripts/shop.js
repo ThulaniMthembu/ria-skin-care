@@ -441,6 +441,25 @@ checkoutForm.onsubmit = function (event) {
 	}
 };
 
+function validateForm() {
+	const inputs = checkoutForm.getElementsByTagName('input');
+	for (let input of inputs) {
+		if (input.hasAttribute('required') && input.value.trim() === '') {
+			alert(`Please fill out the ${input.placeholder} field.`);
+			return false;
+		}
+		if (input.name === 'email' && !validateEmail(input.value)) {
+			alert('Please enter a valid email address.');
+			return false;
+		}
+		if (input.name === 'phone' && !validatePhone(input.value)) {
+			alert('Please enter a valid phone number.');
+			return false;
+		}
+	}
+	return true;
+}
+
 function validateEmail(email) {
 	const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 	return re.test(email);
