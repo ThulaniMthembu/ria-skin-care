@@ -463,6 +463,9 @@ checkoutForm.onsubmit = function (event) {
 				cart.clearCart(true); // Clear cart without confirmation
 				modal.style.display = 'none';
 				toggleCart(); // Close the cart
+
+				checkoutForm.reset();
+				orderDetailsInput.value = '';
 			},
 			function (error) {
 				console.error('Email sending failed:', error);
