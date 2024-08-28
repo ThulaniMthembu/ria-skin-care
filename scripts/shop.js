@@ -401,14 +401,12 @@ searchInput.addEventListener('keypress', function (e) {
 	}
 });
 
-// Initial display of all products
 displayProducts(products);
 
 function handleCheckout() {
 	if (cart.items.length === 0) {
 		showPopover('Your cart is empty. Add some items before checking out.');
 	} else {
-		// Populate order details
 		const orderDetails = cart.items
 			.map(
 				(item) =>
@@ -421,7 +419,6 @@ function handleCheckout() {
 			2
 		)}`;
 
-		// Show modal
 		modal.style.display = 'block';
 	}
 }
@@ -440,7 +437,6 @@ checkoutForm.onsubmit = function (event) {
 	event.preventDefault();
 
 	if (validateForm()) {
-		// Prepare the email parameters
 		showLoader();
 
 		var templateParams = {
@@ -460,9 +456,9 @@ checkoutForm.onsubmit = function (event) {
 				showPopover(
 					"Thank you for your purchase! You will receive an email confirmation shortly. If you don't see it, please check your spam folder."
 				);
-				cart.clearCart(true); // Clear cart without confirmation
+				cart.clearCart(true);
 				modal.style.display = 'none';
-				toggleCart(); // Close the cart
+				toggleCart();
 
 				checkoutForm.reset();
 				orderDetailsInput.value = '';
