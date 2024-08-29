@@ -348,7 +348,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 `
 										: `<p class="dessert-price">R${price}</p>`
 								}
-                <button class="add-to-cart-btn" onclick="cart.addItem(${id}, products)">Add to Cart</button>
+                <button class="add-to-cart-btn" data-id="${id}">Add to Cart</button>
             </div>
         `;
 			})
@@ -395,6 +395,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
 		displayProducts(filteredProducts);
 	}
+
+	dessertCards.addEventListener('click', function (event) {
+		if (event.target.classList.contains('add-to-cart-btn')) {
+			const productId = parseInt(event.target.getAttribute('data-id'));
+			cart.addItem(productId, products);
+		}
+	});
 
 	cartBtn.addEventListener('click', toggleCart);
 	closeCartBtn.addEventListener('click', toggleCart);
