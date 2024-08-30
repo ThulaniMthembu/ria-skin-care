@@ -78,6 +78,18 @@ header.scrolled {
 	border-radius: 10px;
 }
 
+@media screen and (max-width: 768px) {
+	.menu > a {
+		font-weight: 500;
+		margin: 0 5px;
+		color: var(--secondary);
+		font-size: 1rem;
+		text-decoration: none;
+		padding: 5px;
+		border-radius: 10px;
+	}
+}
+
 .menu > a:hover {
 	color: var(--lighter);
 	background: var(--secondary);
