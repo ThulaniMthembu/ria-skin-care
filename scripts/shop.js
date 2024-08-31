@@ -477,6 +477,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 					checkoutForm.reset();
 					orderDetailsInput.value = '';
+
+					document.body.classList.add('body-no-scroll');
 				},
 				function (error) {
 					console.error('Email sending failed:', error);
@@ -537,10 +539,12 @@ document.addEventListener('DOMContentLoaded', function () {
 		popover.textContent = message;
 		document.body.appendChild(popover);
 
+		document.body.classList.add('body-no-scroll');
 		popover.style.zIndex = '10000';
 
 		setTimeout(() => {
 			popover.remove();
+			document.body.classList.remove('body-no-scroll');
 		}, duration);
 	}
 });
