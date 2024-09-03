@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
 				'250ml': 680,
 			},
 			category: 'Flawless Complexion',
-			image: '../products/cream-even-tone1.jpeg',
+			image: '../real-products/cream.jpg',
 		},
 		{
 			id: 2,
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
 				'250ml': 680,
 			},
 			category: 'Flawless Complexion',
-			image: '../products/cream-even-tone1.jpeg',
+			image: '../real-products/cream2.jpg',
 		},
 
 		// Brightening and Lightening
@@ -84,6 +84,7 @@ document.addEventListener('DOMContentLoaded', function () {
 				'250ml': 480,
 			},
 			category: 'Brightening and Lightening',
+			image: '../products/cream-even-tone1.jpeg',
 		},
 		{
 			id: 4,
@@ -92,6 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
 				'200ml': 120,
 			},
 			category: 'Brightening and Lightening',
+			image: '../products/cream-even-tone2.jpeg',
 		},
 		{
 			id: 5,
@@ -102,6 +104,7 @@ document.addEventListener('DOMContentLoaded', function () {
 				'250ml': 480,
 			},
 			category: 'Brightening and Lightening',
+			image: '../products/cream-even-tone3.jpeg',
 		},
 		{
 			id: 6,
@@ -110,6 +113,7 @@ document.addEventListener('DOMContentLoaded', function () {
 				'200ml': 380,
 			},
 			category: 'Brightening and Lightening',
+			image: '../real-products/cream2.jpg',
 		},
 		{
 			id: 7,
@@ -119,6 +123,7 @@ document.addEventListener('DOMContentLoaded', function () {
 				'200ml': 290,
 			},
 			category: 'Brightening and Lightening',
+			image: '../products/serum.jpeg',
 		},
 		{
 			id: 8,
@@ -129,6 +134,7 @@ document.addEventListener('DOMContentLoaded', function () {
 				'250ml': 760,
 			},
 			category: 'Brightening and Lightening',
+			image: '../products/treatment1.jpeg',
 		},
 
 		// Handmade Soaps
@@ -137,42 +143,49 @@ document.addEventListener('DOMContentLoaded', function () {
 			name: 'Turmeric Soap',
 			price: 50,
 			category: 'Handmade Soaps',
+			image: '../products/soap-turmeric.jpeg',
 		},
 		{
 			id: 10,
 			name: 'Goat Milk Soap',
 			price: 45,
 			category: 'Handmade Soaps',
+			image: '../real-products/goatmilk-cut.jpg',
 		},
 		{
 			id: 11,
 			name: 'Lavender Soap',
 			price: 40,
 			category: 'Handmade Soaps',
+			image: '../real-products/lavender-cut.jpg',
 		},
 		{
 			id: 12,
 			name: 'Turmeric Soap',
 			price: 60,
 			category: 'Handmade Soaps',
+			image: '../real-products/goatmilk-cut2.jpg',
 		},
 		{
 			id: 13,
 			name: 'Vitamin C Soap',
 			price: 60,
 			category: 'Handmade Soaps',
+			image: '../products/lemon-soap.jpeg',
 		},
 		{
 			id: 14,
 			name: 'Aloe Vera Soap',
 			price: 50,
 			category: 'Handmade Soaps',
+			image: '../products/treatment2.jpeg',
 		},
 		{
 			id: 15,
 			name: 'Lemon and Basil Soap',
 			price: 50,
 			category: 'Handmade Soaps',
+			image: '../products/lemon-soap.jpeg',
 		},
 
 		// Rose Water
@@ -183,6 +196,7 @@ document.addEventListener('DOMContentLoaded', function () {
 				'50ml': 50,
 			},
 			category: 'Rose Water',
+			image: '../products/rose-water.jpeg',
 		},
 	];
 

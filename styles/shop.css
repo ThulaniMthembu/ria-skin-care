@@ -8,6 +8,7 @@
 	--lighter: #bde0fe;
 	--dark: #333;
 	--white: #fff;
+	--button-bg: #8c4196;
 }
 
 *,
@@ -478,6 +479,31 @@ main {
 	90% {
 		opacity: 1;
 	}
+}
+
+footer {
+	background-color: var(--button-bg);
+	color: var(--white);
+	text-align: center;
+	padding: 10px 20px;
+	margin-top: 50px;
+}
+
+footer .social-links {
+	margin-top: 10px;
+}
+
+footer .social-links a {
+	display: inline-block;
+	margin: 0 10px;
+	color: var(--white);
+	font-size: 24px;
+	transition: transform 0.3s ease, color 0.3s ease;
+}
+
+footer .social-links a:hover {
+	transform: scale(1.2);
+	color: var(--lighter);
 }
 
 /* Media query for smaller screens */

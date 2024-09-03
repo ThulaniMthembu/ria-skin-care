@@ -5,6 +5,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>About Us - RIA Skin Care</title>
 		<link rel="stylesheet" href="/styles/about.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+		/>
 	</head>
 	<body>
 		<header>
@@ -21,25 +25,53 @@
 		</header>
 
 		<main>
+			<!-- Intro Section -->
+			<div id="intro-container">
+				<h1>RIA Skincare</h1>
+				<p>
+					At RIA Skin Care, we believe that beauty begins with natural, pure
+					ingredients. Founded in 2024 by the passionate and innovative
+					Rialivhuwa Portia Nenzhelele, our brand is dedicated to creating
+					skincare solutions that are not only effective but also
+					environmentally conscious. Inspired by the rich natural resources of
+					our region and traditional remedies passed down through generations,
+					RIA Skin Care is a celebration of nature’s power to heal and
+					rejuvenate. Every product we craft is a testament to our commitment to
+					purity, sustainability, and the beauty of all skin types.
+				</p>
+			</div>
+
 			<!-- CEO Section -->
 			<section class="about-section ceo" id="ceo-section">
 				<div class="text-content">
 					<h2>Our Founder: Rialivhuwa Portia Nenzhelele</h2>
 					<p>
-						Rialivhuwa, the visionary behind RIA Skin Care. <br />
-						Rialivhuwa has been dedicated to creating products that nourish and
-						rejuvenate the skin.
+						Rialivhuwa Portia Nenzhelele, the visionary behind RIA Skin Care,
+						has always believed in the power of nature to enhance beauty. With a
+						deep-rooted passion for skincare and a commitment to holistic
+						wellness, Rialivhuwa has dedicated her career to creating products
+						that not only nourish and rejuvenate the skin but also promote a
+						sense of well-being and confidence. Drawing inspiration from the
+						natural beauty and traditions of her homeland, she combines
+						time-honored remedies with modern science to deliver skincare
+						solutions that are both gentle and effective. Under her guidance,
+						RIA Skin Care has grown into a brand that champions sustainability,
+						purity, and the belief that every person deserves to feel beautiful
+						in their skin.
 					</p>
 				</div>
 				<div class="image-content">
-					<img src="assets/ceo.jpg" alt="CEO's Image" />
+					<img id="ceo-img" src="/assets/CEO.jpg" alt="CEO's Image" />
 				</div>
 			</section>
 
 			<!-- Company Section -->
 			<section class="about-section company">
 				<div class="image-content">
-					<img src="assets/company.jpg" alt="Company History Image" />
+					<img
+						src="/assets/logo-black-background.jpg"
+						alt="Company History Image"
+					/>
 				</div>
 				<div class="text-content">
 					<h2>About RIA Skin Care</h2>
@@ -60,7 +92,7 @@
 				<div class="text-content">
 					<h2>Our Products</h2>
 					<p>
-						At Ria Skin Care, quality is paramount. All our products are
+						At Ria Skin Care, quality is paramount. Every bar of soap is
 						carefully crafted in small batches to maintain high standards of
 						consistency and excellence. Our products are free from harsh
 						chemicals, synthetic fragrances, and artificial colors, reflecting
@@ -68,6 +100,47 @@
 						promote natural beauty through eco-friendly, cruelty-free practices
 						and sustainable sourcing.
 					</p>
+
+					<div class="carousel">
+						<div class="carousel-container">
+							<img
+								src="/real-products/lavender-box.jpg"
+								alt="lavender bar soap"
+								class="carousel-item active"
+							/>
+							<img
+								src="/real-products/lavender-cut.jpg"
+								alt="lavender soap cut"
+								class="carousel-item"
+							/>
+							<img
+								src="/real-products/goatmilk-box.jpg"
+								alt="goat milk bar"
+								class="carousel-item"
+							/>
+							<img
+								src="/real-products/goatmilk-cut.jpg"
+								alt="goat milk soap cut"
+								class="carousel-item"
+							/>
+							<img
+								src="/real-products/cream2.jpg"
+								alt="cream"
+								class="carousel-item"
+							/>
+							<div class="carousel-caption">
+								<h3>Product 1</h3>
+								<p>Description of Product 1</p>
+							</div>
+						</div>
+						<button class="carousel-button prev" aria-label="Previous product">
+							&lt;
+						</button>
+						<button class="carousel-button next" aria-label="Next product">
+							&gt;
+						</button>
+					</div>
+
 					<p>
 						We are grateful for the positive feedback and support from our
 						growing community of customers. Their love for our products
@@ -77,17 +150,36 @@
 						solutions.
 					</p>
 				</div>
-				<div class="image-content">
-					<img src="assets/products.jpg" alt="Products Image" />
-				</div>
 			</section>
 		</main>
 
 		<footer>
+			<div class="social-links">
+				<a
+					href="https://www.facebook.com/riaskincare"
+					target="_blank"
+					aria-label="Facebook"
+				>
+					<i class="fab fa-facebook-f"></i>
+				</a>
+				<a
+					href="https://www.instagram.com/riaskincare"
+					target="_blank"
+					aria-label="Instagram"
+				>
+					<i class="fab fa-instagram"></i>
+				</a>
+				<a
+					href="https://www.twitter.com/riaskincare"
+					target="_blank"
+					aria-label="Twitter"
+				>
+					<i class="fab fa-twitter"></i>
+				</a>
+			</div>
 			<p>&copy; 2024 RIA Skin Care. All rights reserved.</p>
 		</footer>
 
-		<script src="scripts/script.js"></script>
+		<script src="/scripts/about.js"></script>
 	</body>
 </html>
-s
