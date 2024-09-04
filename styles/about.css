@@ -213,7 +213,7 @@ footer .social-links a:hover {
 
 	.about-section {
 		flex-direction: column;
-		text-align: center;
+		text-align: start;
 	}
 
 	.about-section .text-content,
